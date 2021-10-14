@@ -1,7 +1,6 @@
-const express = require("express");
-
-const { WELCOME } = require("./constants.js");
-const city = require("./routes/city.js");
+import express from "express";
+import { WELCOME } from "./constants";
+import { router as city } from "./routes/city.js";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
