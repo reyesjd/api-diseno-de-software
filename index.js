@@ -1,11 +1,11 @@
 import express from "express";
-import { WELCOME } from "./constants";
-import { router as city } from "./routes/city.js";
+import { WELCOME } from "./constants.js";
+import router from "./routes/city.js";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use("/", city);
+app.use("/", router);
 
 app.get("/", (req, res) => {
   res.json(WELCOME);
