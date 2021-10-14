@@ -19,8 +19,6 @@ app.get("/", function (req, res) {
 app.get("/:city", function (req, res) {
   const cityParam = normalize(req.params.city);
 
-  res.setHeader("Content-Type", "application/json");
-
   if (check("bogota", cityParam)) {
     res.json({ departamento: "cundinamarca" });
   } else if (check("cartagena", cityParam)) {
@@ -32,7 +30,7 @@ app.get("/:city", function (req, res) {
   } else if (check("sincelejo", cityParam)) {
     res.json({ message: "¿Estás bien? No existe." });
   } else {
-    res.json({ message: "Ciudad inválida" });
+    res.status(404).json({ message: "Ciudad inválida" });
   }
 });
 
