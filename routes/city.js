@@ -27,7 +27,7 @@ router.get("/:city", (req, res) => {
   } else if (checkCity("sincelejo", cityParam)) {
     res.json(SINCELEJO);
   } else {
-    res.status(404).json(ERROR);
+    res.json({ "Departamento": cityParam });
   }
 });
 export default router;
